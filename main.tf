@@ -83,8 +83,14 @@ resource "azurerm_service_plan" "asp" {
   location            = azurerm_resource_group.rg.location
   os_type             = "Linux"
   sku_name            = "B1"
-}
 
+  timeouts {
+    create = "30m"
+    read   = "10m"
+    update = "30m"
+    delete = "30m"
+  }
+}
 # Wartezeit: App Service Plan wird manchmal direkt nach Create kurz mit 404 gelesen (ARM Propagation)
 resource "time_sleep" "wait_for_asp" {
   depends_on      = [azurerm_service_plan.asp]
