@@ -22,7 +22,7 @@ provider "azurerm" {
 # --- 2. Grundlegende Ressourcen-Verwaltung ---
 resource "azurerm_resource_group" "rg" {
   name     = "rg-vicc-praxisarbeit"
-  location = "West Europe"
+  location = "Switzerland North"
 }
 
 # --- 3. Netzwerk-Infrastruktur ---
