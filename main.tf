@@ -15,13 +15,8 @@ terraform {
   }
 }
 
-# Konfiguration des Azure Resource Manager Providers
-# resource_provider_registrations = "core" verhindert, dass Terraform versucht,
-# "alle" Provider im Abo zu registrieren (häufiger Grund für Plan-Hänger/Fehler in
-# eingeschränkten Subscriptions).
 provider "azurerm" {
   features {}
-  resource_provider_registrations = "core"
 }
 
 # --- 2. Grundlegende Ressourcen-Verwaltung ---
